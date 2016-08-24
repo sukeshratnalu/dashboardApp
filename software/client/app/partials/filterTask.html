@@ -1,0 +1,20 @@
+<div class="col-md-7" ng-controller="dashboardController as vm">
+    <div class="col-md-5">
+        <ui-select ng-model="selectedStatus.value"  ng-change="filterTasks();" theme="bootstrap">
+            <ui-select-match  allow-clear="true" placeholder="Select Status...">{{$select.selected.name}}</ui-select-match>
+            <ui-select-choices repeat="item in (vm.statusList | filter: $select.search) track by item.name">
+                <span ng-bind="item.name"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+    <div class="col-md-1"><br></div>
+    <div class="col-md-6">
+        <ui-select ng-model="selectedPriority.selected" multiple theme="bootstrap" ng-change="filterTasks();">
+            <ui-select-match  allow-clear="true" placeholder="Select Priorities...">{{$item.name}}</ui-select-match>
+            <ui-select-choices repeat="item in vm.prioritiesList | filter: $select.search">
+                <div ng-bind-html="item.name | highlight: $select.search"></div>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+</div>

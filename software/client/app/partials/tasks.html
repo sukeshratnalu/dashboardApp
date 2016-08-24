@@ -1,0 +1,36 @@
+
+<div class="row" >
+
+
+    <div class="col-md-4 task {{task.priority}}"  ng-repeat="task in tasks">
+        <div class="row">
+            <div class="col-md-5 task-heading">
+                <label>{{task.name}}</label>
+            </div>
+            <div class="col-md-7 task-operation">
+                <div class="col-md-4">
+                    <a href="#" ng-click="editTask(task.id);"><i class="fa fa-pencil fa-2x" uib-tooltip="Edit" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" ng-click="deleteTasks(task.id);"><i class="fa fa-trash-o fa-2x" uib-tooltip="Delete" aria-hidden="true"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" ng-show="task.status=='COMPLETED'"><i class="fa fa-check-square-o fa-2x" uib-tooltip="Completed" aria-hidden="true"></i></a>
+                    <a href="#" ng-hide="task.status=='COMPLETED'" ng-click="markAsComplete(task.id);"><i class="fa fa-square-o fa-2x" uib-tooltip="MarkAsCompleted" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12 task-body">
+            <label><b>Description :</b></label>{{task.description}}<br>
+            <label><b>Start Date :</b></label>{{task.startdate}}<br>
+            <label><b>End Date :</b></label>{{task.enddate}}<br>
+            <label><b>Status :</b></label>{{task.status}}<br>
+            <label><b>Priority :</b></label>{{task.priority}}
+        </div>
+
+
+    </div>
+
+
+</div>

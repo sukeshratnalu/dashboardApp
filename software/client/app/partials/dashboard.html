@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="container operation-div">
+
+            <filter-tasks tasks="vm.tasks" status-list="vm.statusList" priorities-list="vm.prioritiesList"></filter-tasks>
+            <div class="col-md-5" style="text-align: right;">
+                <div class="col-md-7">
+                    <a href="#"><b>Show Tasks On Chart</b></a>
+                </div>
+                <add-task tasks="vm.tasks"></add-task>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <p class="text-center" ng-hide="vm.dataLoaded">
+        <i class="fa fa-spinner fa-spin fa-5x" style="color: green;"></i>
+    </p>
+    <task-details tasks="vm.tasks" ng-show="vm.dataLoaded"></task-details>
+</div>
+
